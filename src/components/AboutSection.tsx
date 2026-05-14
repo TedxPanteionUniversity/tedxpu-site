@@ -2,9 +2,9 @@ import { aboutSection } from "@/data/about";
 
 function AboutTitle({ id, label }: { id: string; label: string }) {
   return (
-    <h2 id={id} className="about-title" aria-label={label}>
-      <svg className="about-title-svg" viewBox="0 0 1000 216" aria-hidden="true" focusable="false">
-        <text x="0" y="209" textLength="1000" lengthAdjust="spacingAndGlyphs">
+    <h2 id={id} className="cover-title" aria-label={label}>
+      <svg className="cover-title-svg" viewBox="0 0 1030 195" aria-hidden="true" focusable="false">
+        <text x="20" y="179" textLength="1000" lengthAdjust="spacingAndGlyphs">
           {label}
         </text>
       </svg>

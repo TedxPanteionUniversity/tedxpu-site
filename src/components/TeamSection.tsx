@@ -1,12 +1,11 @@
 import { teamGroups } from "@/data/team";
 import Image from "next/image";
-import type { CSSProperties } from "react";
 
 function CoverTitle({ id, label, className = "" }: { id: string; label: string; className?: string }) {
   return (
     <h2 id={id} className={`cover-title ${className}`} aria-label={label}>
       <svg className="cover-title-svg" viewBox="0 0 1000 185" aria-hidden="true" focusable="false">
-        <text x="0" y="179" textLength="1000" lengthAdjust="spacingAndGlyphs">
+        <text x="-10" y="179" textLength="1020" lengthAdjust="spacingAndGlyphs">
           {label}
         </text>
       </svg>
@@ -21,27 +20,20 @@ export default function TeamSection() {
 
       <div className="teams-content" aria-label="TEDx Panteion University teams">
         {teamGroups.map((team) => {
-          const style = { "--team-accent": team.accent } as CSSProperties;
-
           return (
-            <article key={team.name} className="team-group" style={style}>
-              <div className="team-card-collage" aria-label={`${team.name} member photos`}>
-                {team.members.map((member, memberIndex) => (
-                  <figure
-                    key={member.name}
-                    className="team-member-card"
-                    style={{ "--member-index": memberIndex } as CSSProperties}
-                  >
-                    <Image
-                      src={member.image}
-                      alt={`${member.name}, ${team.name}`}
-                      width={900}
-                      height={1120}
-                      sizes="(max-width: 720px) 72vw, (max-width: 1100px) 32vw, 23vw"
-                      className="team-member-image"
-                    />
-                  </figure>
-                ))}
+            <article key={team.name} className={`team-group team-group-${team.slug}`}>
+              <div className="team-card-collage" aria-label={`${team.name} photo`}>
+                <figure className="team-photo-card">
+                  <Image
+                    src={team.image.src}
+                    alt={`${team.name} members`}
+                    width={team.image.width}
+                    height={team.image.height}
+                    sizes="(max-width: 720px) 92vw, (max-width: 1100px) 78vw, 56vw"
+                    className="team-photo-image"
+                    unoptimized
+                  />
+                </figure>
               </div>
 
               <div className="team-copy">
@@ -59,6 +51,7 @@ export default function TeamSection() {
           );
         })}
       </div>
+      <div className="h-130 bg-white" aria-hidden="true" />
     </section>
   );
 }

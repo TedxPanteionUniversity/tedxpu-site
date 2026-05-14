@@ -19,7 +19,9 @@ export default function HomePage() {
       <div className="site-sections">
         <EventSection />
         <TeamSection />
-        <AboutSection />
+        <div className="about-section">
+          <AboutSection />
+        </div>
       </div>
       <Footer />
     </main>

@@ -7,10 +7,10 @@ export default function Header() {
       <div className="flex items-start justify-between gap-6">
         <a href="#hero" className="block shrink-0" aria-label="TEDx Panteion University home">
           <Image
-            src="/assets/tedxpu-logo.svg"
+            src="/assets/tedxpu-logo.png"
             alt="TEDx Panteion University"
-            width={341}
-            height={123}
+            width={1364}
+            height={492}
             priority
             className="h-auto w-33 sm:w-90"
           />
