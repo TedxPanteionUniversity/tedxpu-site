@@ -242,6 +242,9 @@ a {
 }
 
 .year-stack .year-item {
+  border: 0;
+  padding: 0;
+  background: transparent;
   display: inline-flex;
   align-items: center;
   color: #000000;
@@ -262,7 +265,23 @@ a {
 .year-stack .year-item-interactive:hover,
 .year-stack .year-item-interactive:focus-visible {
   color: #11dfe3;
+  outline: none;
   text-shadow: 0 0 0.05em rgb(17 223 227 / 35%);
+}
+
+.year-stack .year-item-selected {
+  color: #ff0800;
+}
+
+.year-stack .year-item-selected:hover,
+.year-stack .year-item-selected:focus-visible {
+  color: #ff0800;
+  text-shadow: 0 0 0.05em rgb(255 8 0 / 32%);
+}
+
+.year-stack .year-item-disabled,
+.year-stack .year-item-overflow {
+  cursor: default;
 }
 
 .event-list {
@@ -457,6 +476,153 @@ a {
   color: rgb(0 0 0 / 36%);
   font-size: clamp(1rem, 2vw, 1.55rem);
   font-style: italic;
+}
+
+.event-detail-shell {
+  width: min(100% - 2rem, 108rem);
+  margin-top: clamp(2.5rem, 5vw, 5.5rem);
+}
+
+.event-detail-panel {
+  display: grid;
+  gap: clamp(1.75rem, 3vw, 3rem);
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+  color: #000000;
+}
+
+.event-detail-heading {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: clamp(1rem, 2.5vw, 2.5rem);
+  align-items: end;
+  border-top: 1px solid rgb(0 0 0 / 18%);
+  padding-top: clamp(1rem, 2vw, 1.75rem);
+}
+
+.event-detail-year {
+  color: #ff0800;
+  font-size: clamp(3.5rem, 9vw, 9rem);
+  font-weight: 950;
+  line-height: 0.78;
+}
+
+.event-detail-heading h3 {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 6.5rem);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.event-detail-close {
+  align-self: start;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  background: transparent;
+  color: #000000;
+  cursor: pointer;
+  font: inherit;
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  font-style: italic;
+  line-height: 1;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.event-detail-close:hover,
+.event-detail-close:focus-visible {
+  color: #ff0800;
+  outline: none;
+}
+
+.event-detail-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(19rem, 0.9fr);
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: start;
+}
+
+.event-detail-main {
+  display: grid;
+  gap: clamp(1.1rem, 2vw, 1.8rem);
+}
+
+.event-detail-image {
+  display: block;
+  width: min(100%, 36rem);
+  height: auto;
+  max-height: 22rem;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.event-detail-copy {
+  display: grid;
+  gap: 1em;
+  max-width: 52rem;
+  font-size: clamp(1.05rem, 1.55vw, 1.35rem);
+  font-weight: 300;
+  line-height: 1.28;
+}
+
+.event-detail-copy p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.event-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.event-detail-links a,
+.event-speaker-list a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.event-detail-links a {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.event-detail-links a:hover,
+.event-detail-links a:focus-visible,
+.event-speaker-list a:hover,
+.event-speaker-list a:focus-visible {
+  color: #ff0800;
+  outline: none;
+}
+
+.event-speaker-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.event-speaker-list a {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgb(0 0 0 / 16%);
+}
+
+.event-speaker-title {
+  font-size: clamp(1rem, 1.35vw, 1.24rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.event-speaker-name {
+  color: rgb(0 0 0 / 68%);
+  font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+  font-style: italic;
+  line-height: 1.15;
 }
 
 .about-cover {
@@ -793,6 +959,35 @@ a {
 
   .event-row {
     grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .event-detail-shell {
+    margin-top: clamp(2rem, 9vw, 3rem);
+  }
+
+  .event-detail-heading,
+  .event-detail-body {
+    grid-template-columns: 1fr;
+  }
+
+  .event-detail-heading {
+    gap: 0.75rem;
+  }
+
+  .event-detail-close {
+    justify-self: start;
+  }
+
+  .event-detail-year {
+    font-size: clamp(3.2rem, 18vw, 5.5rem);
+  }
+
+  .event-detail-heading h3 {
+    font-size: clamp(2.2rem, 14vw, 4.5rem);
+  }
+
+  .event-detail-copy {
+    font-size: clamp(1rem, 4.6vw, 1.2rem);
   }
 
   .event-number {
