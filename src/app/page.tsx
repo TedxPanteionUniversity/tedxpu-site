@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import EventSection from "@/components/EventSection";
+import TeamSection from "@/components/TeamSection";
+import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
 import ConsoleSignature from "@/components/ConsoleSignature";
 
@@ -14,7 +16,13 @@ export default function HomePage() {
       <ConsoleSignature />
       <Header />
       <Hero />
-      <EventSection />
+      <div className="site-sections">
+        <EventSection />
+        <TeamSection />
+        <div className="about-section">
+          <AboutSection />
+        </div>
+      </div>
       <Footer />
     </main>
   );

@@ -5,8 +5,21 @@ import type { HeroDoodle, HeroStaticDoodle } from "@/data/hero";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-function getCountdownLabel() {
-  const distance = Math.max(0, targetDateMs - Date.now());
+const eventStartedLabel = "Event Started";
+const eventStartedVisibleUntilMs = targetDateMs + 24 * 60 * 60 * 1000;
+
+function getTimerLabel() {
+  const now = Date.now();
+
+  if (now >= eventStartedVisibleUntilMs) {
+    return null;
+  }
+
+  if (now >= targetDateMs) {
+    return eventStartedLabel;
+  }
+
+  const distance = targetDateMs - now;
   const totalMinutes = Math.floor(distance / 60000);
   const days = Math.floor(totalMinutes / 1440);
   const hours = Math.floor((totalMinutes % 1440) / 60);
@@ -68,11 +81,11 @@ function StaticDoodle({ doodle }: { doodle: HeroStaticDoodle }) {
 
 export default function Hero() {
   const staticDoodleGroupRef = useRef<HTMLDivElement | null>(null);
-  const [countdown, setCountdown] = useState(getCountdownLabel);
+  const [timerLabel, setTimerLabel] = useState(getTimerLabel);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setCountdown(getCountdownLabel());
+      setTimerLabel(getTimerLabel());
     }, 1000);
 
     return () => window.clearInterval(interval);
@@ -158,13 +171,19 @@ export default function Hero() {
               <StaticDoodle key={doodle.name} doodle={doodle} />
             ))}
 
-            <p
-              className="hero-timer"
-              aria-label="Countdown to 23 May 2026"
-              suppressHydrationWarning
-            >
-              {countdown}
-            </p>
+            {timerLabel ? (
+              <p
+                className="hero-timer"
+                aria-label={
+                  timerLabel === eventStartedLabel
+                    ? eventStartedLabel
+                    : "Countdown to 23 May 2026"
+                }
+                suppressHydrationWarning
+              >
+                {timerLabel}
+              </p>
+            ) : null}
           </div>
         </div>
       </div>

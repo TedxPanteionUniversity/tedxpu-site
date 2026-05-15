@@ -1,23 +1,559 @@
-export const eventItems = [
-  {
-    number: "01",
-    title: "Main Stage",
-    copy: "Talks, performances, and sensory interruptions shaped around this year's theme.",
-  },
-  {
-    number: "02",
-    title: "Installations",
-    copy: "Interactive moments around the venue before and between sessions.",
-  },
-  {
-    number: "03",
-    title: "After Hours",
-    copy: "A closing gathering for the TEDx Panteion University community.",
-  },
-];
+export type EventSpeaker = {
+  title: string;
+  name: string;
+  url: string;
+};
+
+export type HistoryEvent = {
+  year: number;
+  title: string;
+  description: string;
+  logo?: string;
+  introVideo?: string;
+  sponsors?: string;
+  speakers: EventSpeaker[];
+};
 
 export const eventYearRows = [
   ["X.ANNIVERSARY", "2025", "2024"],
   ["2020", "2023", "2022", "2021", "2020", "2020"],
   ["2019", "2018", "2017", "2016"],
+];
+
+export const events: HistoryEvent[] = [
+  {
+    year: 2016,
+    title: "Frameworks",
+    description: `Η θεματική «Frameworks» είναι μια ιδέα που πηγάζει απο την ενεργή 
+    αλληλεπίδραση και συνεχόμενη εξέλιξη από όλα τα διαφορετικά επιστημονικά πεδία 
+    του Παντείου Πανεπιστημίου, με τον ανθρώπινο παράγοντα ως τον κοινό παρονομαστή. 
+    Όλοι οι ομιλητές είναι ενεργά μέλη του επιστημονικού και ακαδημαϊκού κόσμου.`,
+    introVideo: "https://youtu.be/2oGuaUFAA_o?si=npXw95iiEzwiJfud",
+    logo: "/assets/events/2016.jpg",
+    speakers: [
+      {
+        title: "From Day One in Class to Your First Full-Time Job",
+        name: "Dimitris Drougkas",
+        url: "https://youtu.be/4qKUf60Vg0U?si=kgrp4fN3dzZWQvap"
+      },
+      {
+        title: "Four Wars & A Spring: A New Media Terrain",
+        name: "Dimitris Bouras",
+        url: "https://youtu.be/V0lOBzZOQdM?si=5fkiNYgFhbf-QQPx"
+      },
+      {
+        title: "From Extractivism to Regeneration",
+        name: "Pavlos Georgiadis",
+        url: "https://youtu.be/9PK-EE1bbtM?si=kg_OXpSV9iEolMmL"
+      },
+      {
+        title: "The Bug Of Shipping",
+        name: "Vassilios Mougis",
+        url: "https://youtu.be/fmh0K4DrTHs?si=AXVSEnxPWFTyXXP3"
+      },
+      {
+        title: "The Dirt-Poor 'Success Stories'",
+        name: "Stefanos Prokos",
+        url: "https://youtu.be/3L5-5AJUPAM?si=AT511fPH6aUAQ6Pj"
+      },
+      {
+        title: "We the Citizens for the Global Goals",
+        name: "Natasha Pentagioti",
+        url: "https://youtu.be/TSy8PFrJcdg?si=959viQzxKtm1w-bQ"
+      },
+      {
+        title: "Climate Crisis and Sinking Nations",
+        name: "Stavros Mavrogenis",
+        url: "https://youtu.be/dBzzq-YK2dw?si=E83WUX6_OI7xap74"
+      },
+      {
+        title: "NGOs & International Activities",
+        name: "Symeon Sidiropoulos",
+        url: "https://youtu.be/5Rvr2vEG0gA?si=1Zy1XAXPWHjCGhpZ"
+      },
+      {
+        title: "Innovative Solutions for Refugee Crisis",
+        name: "Paula Schwarz",
+        url: "https://youtu.be/L8_nwvNmPSw?si=lbZ5iD5ydJZd_3C6"
+      }
+    ]
+  },
+  {
+    year: 2017,
+    title: "Break The Pattern",
+    description: `Σκοπός μας είναι το κοινό να εμπνευστεί ώστε να πάρει θάρρος να κάνει ξεχωριστά πράγματα,
+χωρίς φόβο, μακριά από τις φόρμες που επιβάλλει η κοινωνία.`,
+    logo: "/assets/events/2017.jpg",
+    introVideo: "",
+    speakers: [
+      {
+        title: "Changing Habits",
+        name: "Kostis Papaioannou",
+        url: "https://youtu.be/lxf-RHnz8_w?si=Iaqc3sfuKVtt0iF_"
+      },
+      {
+        title: "Σεξουαλική βοήθεια ατόμων με ειδικές ανάγκες",
+        name: "Dimitris Zorzos",
+        url: "https://youtu.be/rk4xSnZP5vo?si=jfHPkg09XGnAl4IZ"
+      },
+      {
+        title: "What on earth is a drag queen?",
+        name: "Melita Scabeau",
+        url: "https://youtu.be/RBvbCMNqMxc?si=MV0Hmj3E9SdtYcEs"
+      },
+      {
+        title: "The raise of caring economical systems",
+        name: "Stephane De Freitas",
+        url: "https://youtu.be/Mastczg7bE8?si=9BT72V23cVYivQ73"
+      },
+      {
+        title: "Challenge your limits",
+        name: "Giannis Chatzibeis",
+        url: "https://youtu.be/8I6R6smjTjM?si=HqjpXV-69s-95bsz"
+      },
+      {
+        title: "The power of body communication",
+        name: "Marianna Kavallieratos",
+        url: "https://youtu.be/fxLti2DwUzE?si=6enqLpsdij9t25av"
+      },
+      {
+        title: "Making Greek Education LGBTQI Inclusive",
+        name: "Petros Sapountzakis",
+        url: "https://youtu.be/6s2HXbYDElQ?si=gO912aq1zEEprqrP"
+      },
+      {
+        title: "Publish your game with Quizdom",
+        name: "Christos Tsounis",
+        url: "https://youtu.be/Ki-ALBZYPAA?si=lmiBz2uPTmmsdbi1"
+      },
+      {
+        title: "Sex, Eros and Attachment : The cocktail of love",
+        name: "Panagiotis Kordoutis",
+        url: "https://youtu.be/IAet7tJpeIU?si=aehA6EcTDlkHyQFd"
+      }
+    ]
+  },
+  {
+    year: 2018,
+    title: "Elephant in The Room",
+    description: `Συνήθως παρατηρείς ή απλώς προσπερνάς τα ερεθίσματα γύρω σου; 
+    Πώς είναι δυνατόν να ζήσεις με έναν ελέφαντα στο ίδιο δωμάτιο με εσένα, 
+    αλλά να μην το έχεις αντιληφθεί; Κινούμενο σαν ένας ακροβάτης στην προσπάθεια 
+    του να μην τρυπήσει κάτι το οποίο ούτε καν βλέπεις. Στο μεταξύ, ο ελέφαντας 
+    ολοένα και μεγαλώνει. Και όσο περισσότερο μεγαλώνει, εσύ τόσο μικραίνεις. 
+    Πλέον, δεν χωράτε στο ίδιο δωμάτιο, αφού σου κόβει την ανάσα και το οξυγόνο. 
+    Η άρνηση σου να το δεις, το τροφοδοτεί και το αυξάνει. Αλλά κρατάς τα μάτια σου
+    κλειστά, έχοντας παραμείνει παγιδευμένος στο σκοτάδι. Ο ελέφαντας έχει διάφορα 
+    ονόματα: Ρατσισμός, Σωματεμπόριο, Παιδική Εργασία, Ψευδείς Ειδήσεις, Κατάθλιψη, 
+    Body Shaming… αλλά εσύ ακόμα παριστάνεις πως δεν τα γνωρίζεις. Μέχρι πότε η 
+    επιτηδευμένη σου άγνοια θα σου δίνει άλλοθι για την η απραγία σου; Δίχως αμφιβολία, 
+    χρειάζεται κουράγιο να αποδεχτείς την πραγματικότητα. Να περάσεις τα προβλήματα σου 
+    και της κοινωνίας κάτω από το φως της αλήθειας. Μήπως η συνειδητοποίηση ταξιδεύει με 
+    την ταχύτητα του φωτός; Όταν παραδεχτείς και αναγνωρίσεις το πρόβλημα, κάνεις το 
+    πρώτο βήμα προς την Λύση.
+`,
+    logo: "/assets/events/2018.jpg",
+    introVideo: "https://youtu.be/Gae6OKsMA0M?si=UfqmOVbn4ePQahrY",
+    speakers: [
+      {
+        title: "Unlearning the Truth",
+        name: "Gerasimos Kouvaras",
+        url: "https://youtu.be/VdiOwD0UjSo?si=FIspub0aEIEHNLtN"
+      },
+      {
+        title: "The Education of a Forest School",
+        name: "Vasiliki Kobilakou",
+        url: "https://youtu.be/jnnTTqzAsog?si=56xE1U03FtTIK1XR"
+      },
+      {
+        title: "Body Shaming",
+        name: "Penelope Anastasopoulou",
+        url: "https://youtu.be/JLQBQqE_jds?si=3oidFQUJgUv28Eeg"
+      },
+      {
+        title: "Bringing social change through education",
+        name: "George Evgeniades",
+        url: "https://youtu.be/bGXHcorbOF8?si=kWraonRj8m8HCram"
+      },
+      {
+        title: "How to limit Child Labour",
+        name: "George Moschos",
+        url: "https://youtu.be/dCmh7fsIRD0?si=fgi9YHKCoXjT4Nal"
+      },
+      {
+        title: "Refugees' stories through a camera lens",
+        name: "Orestis Seferoglou",
+        url: "https://youtu.be/CSmCp5N9na0?si=oASC8YU2s8xfmsIr"
+      },
+      {
+        title: "Human Trafficking in the spotlight",
+        name: "Eleni Zacharopoulou",
+        url: "https://youtu.be/K2o95Cl_M0Q?si=30JvlXl6b_RcYRFx"
+      },
+      {
+        title: "Redefining disability",
+        name: "Georgia Kaltsi",
+        url: "https://youtu.be/XQnIEz5uRxY?si=eyuDFscQh3vmgBPA"
+      },
+      {
+        title: "Moving technology forward without leaving people behind",
+        name: "Timos Platsas",
+        url: "https://youtu.be/0OvSenidGjU?si=eL8argVn6sktGE2e"
+      },
+      {
+        title: "Speaking the truth out of fake news",
+        name: "Fragiska Megaloudi",
+        url: "https://youtu.be/LGdTQ4AOT_Y?si=7uHwX_H3uSAuYeWT"
+      },
+      {
+        title: "Growing up with an elephant in your life",
+        name: "George Mavridis",
+        url: "https://youtu.be/D6HB2AR2Eac?si=BiILMt5VW4AUDj_f"
+      },
+      {
+        title: "When equal treatment is not taken for granted",
+        name: "George Kounanis",
+        url: "https://youtu.be/p39AUrVVrAs?si=VpphHOsu_mMDX497"
+      },
+    ]
+  },
+  {
+    year: 2019,
+    title: "The Age of Smupid",
+    description: `Εννοώντας τα κομμάτια στην εποχή του σύγχρονου ανθρώπου, όπου είναι 
+    πιο «έξυπνος» και πιο «χαζός» από ποτέ. Ανάμεσα σε μια ποικιλία αντιθέσεων, εσύ. 
+    Εσύ είσαι αυτός που νιώθεις την αλλαγή, χωρίς όμως να αλλάζεις την συμπεριφορά σου. 
+    Είναι στιγμές που πιστεύεις πως οι πράξεις σου σε ακολουθούν, παρόλο που ταυτόχρονα, 
+    χάνεις την ικανότητα σου να κινηθείς, μένοντας ακίνητος. Οι συνθήκες μέσα στις οποίες 
+    ζεις αλλάζουν και οι καταστάσεις κατασκευάζουν την αντίληψη σου σε καθημερινή βάση. 
+    Οι «τετράγωνες» συμπεριφορές σου, συναισθήματα, άνθρωποι και εσύ αφήνεις τον εαυτό σου 
+    να κατευθύνεται από τωρινές δημιουργίες. Το τετράγωνο χωρίζεται σε δύο βασικά κομμάτια, 
+    τα οποία μπορούν να ενωθούν ανά πάσα ώρα και στιγμή. Αρκεί να βλέπεις το ίδιο γεγονός 
+    από διαφορετική οπτική γωνία. Είσαι έτοιμο να ενώσεις τα κομμάτια;`,
+    logo: "/assets/events/2019.jpg",
+    introVideo: "",
+    speakers: [
+      {
+        title: "Fashion Trends Uncovered",
+        name: "Athena Matisse",
+        url: "https://www.youtube.com/watch?v=vLfZUM8Gjvk"
+      },
+      {
+        title: "What's Chiropractic all about?",
+        name: "Stavros Skarpathakis",
+        url: "https://www.youtube.com/watch?v=zdbponpNvqk"
+      },
+      {
+        title: "The good side of advertising",
+        name: "Thomas Kolster",
+        url: "https://www.youtube.com/watch?v=GmwZaxR5Uig"
+      },
+      {
+        title: "LGBTQI+ issues through mental health",
+        name: "Filippos Paganis",
+        url: "https://www.youtube.com/watch?v=p0PtRqAol2Q"
+      },
+      {
+        title: "An inclusive society of equal opportunities",
+        name: "Labyrinth of Senses",
+        url: "https://www.youtube.com/watch?v=JIdhvvvjxN4"
+      },
+      {
+        title: "What's behind content creation in social media?",
+        name: "Spyros Maltezos",
+        url: "https://www.youtube.com/watch?v=5Gh4yMqdoig"
+      },
+      {
+        title: "A city full of bees",
+        name: "Aggelina Kanellopoulou",
+        url: "https://www.youtube.com/watch?v=GX2hCd_FuB0"
+      },
+      {
+        title: "The phenomenon of Child Abuse",
+        name: "Alexandra Soldatou",
+        url: "https://www.youtube.com/watch?v=FutWWn15Qdc"
+      },
+      {
+        title: "Music is about taking a stand - not just the stage",
+        name: "Giannis Vassilopoulos",
+        url: "https://www.youtube.com/watch?v=l_w52BEjgPw"
+      },
+    ]
+  },
+  {
+    year: 2021,
+    title: "Incentive",
+    description: `Μια έννοια αφηρημένη και διαφορετική για τον καθένα, η οποία στην ουσία 
+    είναι η κινητήρια δύναμη που βρίσκεται υποσυνείδητα πίσω από κάθε απόφαση. 
+    Τα χρώματα της καθημερινής ζωής που δημιουργούν συνειρμούς και ιδέες για εσένα. 
+    Το Incentive είναι η ενέργεια, η αύρα και το συναίσθημα που εκπέμπουν τα πράγματα γύρω σου. 
+    Είναι η αιτία για το νέο ξεκίνημα, είναι η ώθηση για κάθε δράση, η ουσία και πολλές φορές 
+    ο λόγος για να συνεχίσεις να κυνηγάς τον απόλυτο στόχο. Το Incentive είναι αυτό που σε 
+    εμπνέει και σε ωθεί να συνεχίσεις παρά τις δυσκολίες που μπορεί να συναντήσεις. Όπως κι 
+    αν το ερμηνεύσεις, όπως κι αν το σκεφτείς, το “motivation” ή “incentive” είναι, τελικά, 
+    η αρχή των πάντων. Όλα ξεκινούν από τη δική σου θέληση και από ό,τι σε κινητοποιεί να 
+    επιδιώξεις τους στόχους και τις επιθυμίες σου. Επιθυμίες που προκύπτουν από τον χαρακτήρα, 
+    την προσωπικότητα, τις εμπειρίες και τα κίνητρα που σε συγκροτούν. Ποια είναι αυτά τα κίνητρα; 
+    Τα ορίζεις εσύ ή αυτά ορίζουν εσένα; Πώς, τελικά, σηματοδοτούν τη διαδρομή σου; 
+    Διαφορετικό και ταυτόχρονα μοναδικό για τον καθένα, το Incentive καθορίζει τις σκέψεις σου, 
+    δίνει ζωή στις ιδέες σου και είναι δική σου επιλογή αν θα το ακολουθήσεις ή όχι. 
+    Το ακολουθείς και φτάνεις εκεί που θέλεις ή δεν μαθαίνεις ποτέ πού θα μπορούσε να σε οδηγήσει;`,
+    introVideo: "",
+    logo: "/assets/events/2021.jpg",
+    speakers: [
+      {
+        title: "Where dreams come true",
+        name: "Thodoris Papanikolaou",
+        url: "https://www.youtube.com/watch?v=641_AsrgYoA"
+      },
+      {
+        title: "Work for your passion",
+        name: "Nadia Rapti",
+        url: "https://www.youtube.com/watch?v=HgLrKejrma0"
+      },
+      {
+        title: "The impact of incentives",
+        name: "Yiannis Kasvikis",
+        url: "https://www.youtube.com/watch?v=ooJu-N9MUcY"
+      },
+      {
+        title: "The Elephant Man in the Room",
+        name: "Dimitris Platanias",
+        url: "https://www.youtube.com/watch?v=VGOZy_BvTMk&t=18s"
+      },
+      {
+        title: "We are all a brand",
+        name: "Nastasia Tampakopoulou",
+        url: "https://www.youtube.com/watch?v=B8W0cbfgubc"
+      },
+      {
+        title: "I am not just a dancer",
+        name: "Stefanos Dimoulas",
+        url: "https://www.youtube.com/watch?v=pFtpAGmTUBQ"
+      },
+      {
+        title: "The incentive for environmental awareness",
+        name: "Vasia Kallimachou",
+        url: "https://www.youtube.com/watch?v=QpCmXM0sOJQ"
+      },
+    ]
+  },
+  {
+    year: 2022,
+    title: "Happy Medium",
+    description: `φ = 1.61803... Αριθμοί που φαίνονται άγνωστοι εκ πρώτης όψεως, μια έννοια που μοιάζει περίεργη πέρα από τις σελίδες των μαθηματικών βιβλίων, αριθμοί που χάνουν το νόημα τους μέσα στο πλήθος των πληροφοριών που βυθιζόμαστε καθημερινά. Παρόλα αυτά , ο αριθμός φ συμβολίζει το Happy Medium, μια έννοια που μπορεί να μοιάζει μόνο μαθηματική, αλλά είναι πολλά παραπάνω. Μπορούμε να βρούμε την έννοια του φ στις τέχνες, στη φύση, στην αρχιτεκτονική, στα ανθρώπινα σώματα και στα ανθρώπινα χαρακτηριστικά. Το Happy Medium αντανακλά την τελειότητα, τη σταθερότητα, το ιδανικό σημείο μεταξύ δύο εντελώς αντίθετων πόλων Συμβολίζει την ισορροπία μεταξύ της τελειότητας και της ατέλειας- αυτή τη νοητή γραμμή που οριοθετεί την έννοια της φυσικής αρμονίας, ορίζει το βέλτιστο αποτέλεσμα μιας κατάστασης και συνθέτει την ισορροπία. Όλοι ψάχνουν και προσπαθούν να εφαρμόσουν την ισορροπία στην ζωή τους με οποιονδήποτε τρόπο μοιάζει πιο συμβατός για αυτούς. Ακόμα και αν μερικές φορές η ισορροπία μοιάζει αδύνατη, οι πράξεις μας και οι επιλογές μας αποκαλύπτουν το προσωπικό μας ταξίδι προς το δικό μας Happy Medium.`,
+    introVideo: "",
+    logo: "/assets/events/2022.jpg",
+    speakers: [
+      {
+        title: "Our Son Has Two Dads",
+        name: "Giorgos Makris & Michalis Oikonomou",
+        url: "https://youtu.be/GoYw5QrQ9ug?si=i6oufYj7Ri8WR06a"
+      },
+      {
+        title: "What happens when happy medium is not actually happy",
+        name: "Tina Michailidou",
+        url: "https://youtu.be/k0C6UkzrQJ0?si=g5SYa8jZRYjYNKuq"
+      },
+      {
+        title: "Lessons on sustainability by a Greek family business",
+        name: "Gianna Tzika",
+        url: "https://youtu.be/RHOlEEgzEgU?si=5eLiCHlIGKbodJvr"
+      },
+      {
+        title: "Come take your last shower with two feet",
+        name: "Nikos Papaggelis",
+        url: "https://youtu.be/UfnZ3S5x7ng?si=esO4ZvEFO0RX2s-1"
+      },
+      {
+        title: "Happy Medium: Maths, Nature, Architecture, Visual Arts",
+        name: "Spyros Moschonas",
+        url: "https://youtu.be/ubLARfCUnv4?si=ulVxyXVs4MxTS3wE"
+      },
+      {
+        title: "Storytelling: Secrets and Rituals about fairytales!",
+        name: "Sassa Voulgari",
+        url: "https://youtu.be/5k5kD2YfqUk?si=kp-BkN3m1URfH-uC"
+      },
+      {
+        title: "Work Life Balance: What, Why Now & How",
+        name: "Christina Demetriades",
+        url: "https://youtu.be/_-K9nGjjgi4?si=sSXbHUr0QM6DB09a"
+      }
+    ]
+  },
+  {
+    year: 2023,
+    title: "Feed",
+    description: `Η ιδέα του "FEED" έχει χρησιμοποιηθεί κυριολεκτικά και μεταφορικά στην ιστορία για
+να περιγράψει πολλές έννοιες. Κυριολεκτικά, η πράξη του να ταΐζεις κάποιον (σημασία
+του αγγλικού ρήματος feed) συμβολίζει τη θρέψη, επιβίωση και θρέψη της ψυχής.
+Μπορεί επίσης να αντιπροσωπεύει την μετάδοση της γνώσης, σοφία και καθοδήγηση.
+Σήμερα το "FEED" είναι κάτι που ελέγχουμε πολύ συχνά, αν όχι καθημερινά. Υπάρχει
+στα κινητά μας, στα tablets μας, στους υπολογιστές μας, διαμορφώνοντας την
+αντίληψη μας για τον κόσμο. Παρόλο αυτά ο,τι βλέπουμε δεν είναι πάντα έγκυρο,
+μερικές φορές αδυνατεί να μας παρουσιάσει την ολοκληρωμένη εικόνα. Απο την άλλη,
+το "feedback” είναι κάτι που ζητάμε από απο τους εργοδότες μας και τους καθηγητές
+μας. Μερικές φορες αυτό μπορεί να μας κάνει καλύτερους εργαζόμενους και να
+δυναμώσει τις σχέσεις μας. Συνοψίζοντας, η ιδέα του "feed" εννόνει το υλικο και το
+πνευματικό, υπογραμμίζοντας το πως η κατανάλωση επηρεάζει τις απόψεις μας.`,
+    logo: "/assets/events/2023.jpg",
+    speakers: [
+      {
+        title: "Embracing My Heritage: An Afro-Greek Odyssey",
+        name: "Idra Kayne",
+        url: "https://www.youtube.com/watch?v=iORWxmhJXXk"
+      },
+      {
+        title: "Recognising the seeds of gender-based violence",
+        name: "Andriana Nikoloulia",
+        url: "https://www.youtube.com/watch?v=aOtb_qFtEyc"
+      },
+      {
+        title: "Customer-Centric Evolution: The power of feedback",
+        name: "Elina Kakourou",
+        url: "https://www.youtube.com/watch?v=Tk-7-AXoFK0"
+      },
+      {
+        title: "Unleashing Creativity in the Era of AI and Blockchain",
+        name: "Stamatis Papangelou",
+        url: "https://www.youtube.com/watch?v=3OykiYSLEZQ"
+      },
+      {
+        title: "Towards a Cyber-Integrated Human",
+        name: "Konstantinos Koskinas & Maria Koletsi",
+        url: "https://www.youtube.com/watch?v=9bL93L24EE4"
+      },
+      {
+        title: "The Time-Waste Paradox: Consumption in a Capitalist World",
+        name: "Anastasia Skopa",
+        url: "https://www.youtube.com/watch?v=4Yd2GJ3gdgc"
+      },
+      {
+        title: "From Leukemia to Life:A Journey of Strength, Dance & Hope",
+        name: "Regina Makedou",
+        url: "https://www.youtube.com/watch?v=c1OSI3YqYWg"
+      },
+      {
+        title: "Feeding my body or my emotions?",
+        name: "Thekla Gkioni",
+        url: "https://www.youtube.com/watch?v=CIOU8n9SiKc"
+      },
+    ]
+  },
+  {
+    year: 2024,
+    title: "Urban Maze",
+    description: `Ένας λαβύρινθος από ανθρώπινες ιστορίες και αστικές εμπειρίες. Μέσα στο λαβύρινθο, κάθε μονοπάτι κρύβει ένα μυστικό και μια νέα ανακάλυψη.
+
+Στις πόλεις που ζούμε, κάθε σημείο, κάθε κτήριο, κάθε δρόμος κρύβει μια μοναδική ιστορία, που ίσως ποτέ δεν αναρωτηθήκαμε αν πρέπει να μάθουμε. Μέσα σε αυτές τις πόλεις αναζητάμε απεγνωσμένα μια σύνδεση, αλλά δεν είναι πάντα εφικτή.
+
+Κάθε πρόσωπο σε αυτό το λαβύρινθο φέρνει μια νέα διάσταση στο παζλ της ζωής στην πόλη, ενσωματώνοντας διαφορετικές πτυχές της καθημερινότητάς μας.
+
+Ελάτε να ταξιδέψουμε μαζί στο λαβύρινθο, και να ανακαλύψουμε την έξοδο του. Μία έξοδος, που θα μας βοηθήσει να κατανοήσουμε τόσο τους εαυτούς μας, όσο και τον κόσμο γύρω μας.`,
+    introVideo: "",
+    logo: "/assets/events/2024.jpg",
+    speakers: [
+      {
+        title: "Emotions and Relationships in Modern Life",
+        name: "Marina Arvanitaki",
+        url: "https://www.youtube.com/watch?v=Sz6CKGbg8Wk&list=PLdBayfDMYEO6EFvbQmv9ozm-jWTsM3kO7&index=6"
+      },
+      {
+        title: "Finding Inspiration in an Artistic Chaos",
+        name: "Theodosis Vlasopoulos",
+        url: "https://www.youtube.com/watch?v=xGx3xgzgKzA&list=PLdBayfDMYEO6EFvbQmv9ozm-jWTsM3kO7&index=10"
+      },
+      {
+        title: "How Community Engagement Can Help Take Back your City",
+        name: "Adam Markakis",
+        url: "https://www.youtube.com/watch?v=dK7KIXinlYY&list=PLdBayfDMYEO6EFvbQmv9ozm-jWTsM3kO7&index=2"
+      },
+      {
+        title: "Embracing Upcycling in Field Construction",
+        name: "Margarita Kianidou",
+        url: "https://www.youtube.com/watch?v=yOu7uIj_2kM&list=PLdBayfDMYEO6EFvbQmv9ozm-jWTsM3kO7&index=3"
+      },
+      {
+        title: "Voices of Empowerment: Redefining Sex Work Advocacy",
+        name: "Anna Kouroupou",
+        url: "https://www.youtube.com/watch?v=qeCAN1rVzco&list=PLdBayfDMYEO6EFvbQmv9ozm-jWTsM3kO7&index=7"
+      },
+      {
+        title: "Beyond Crowds: Exploring Loneliness Psychology",
+        name: "Dimitris Papadimitriadis",
+        url: "https://www.youtube.com/watch?v=wzmhaig8kVY&list=PLdBayfDMYEO6EFvbQmv9ozm-jWTsM3kO7&index=8"
+      },
+      {
+        title: "Casting Light at an Unpaired Vision Reality",
+        name: "Juliana Bousi",
+        url: "https://www.youtube.com/watch?v=UDoRBah06Tk&list=PLdBayfDMYEO6EFvbQmv9ozm-jWTsM3kO7&index=5"
+      },
+      {
+        title: "The Art of Observation, An Architectural Point of View",
+        name: "Aristidis Ntallas",
+        url: "https://www.youtube.com/watch?v=IsM7ZCNTthg&list=PLdBayfDMYEO6EFvbQmv9ozm-jWTsM3kO7"
+      },
+      {
+        title: "Healthy Living in a Urban Jungle",
+        name: "Fotini Georgiou",
+        url: "https://www.youtube.com/watch?v=JxHJuyDbq3w&list=PLdBayfDMYEO6EFvbQmv9ozm-jWTsM3kO7&index=9"
+      },
+    ]
+  },
+  {
+    year: 2025,
+    title: "Luminescence",
+    description: `Ποιος είπε ότι χρειάζεται ήλιος για να υπάρξει φως;
+
+Η φωταύγεια υπάρχει γύρω μας. Από τις τσούχτρες στους σκοτεινούς βυθούς , μέχρι τις πυγολαμπίδες που φωτίζουν μόνες τους τη νύχτα. Αλλά δεν είναι μόνο η φύση που εκπέμπει φως. Είναι και αυτοί οι άνθρωποι, που με την έμπνευση, τη δύναμη και την αισιοδοξία του,, φωτίζουν τον δρόμο.
+
+Επιστημονικά, η φωταύγεια είναι η εκπομπή φωτός χωρίς την ανάγκη αύξησης της θερμοκρασίας. Στις ζωές μας όμως, η φωταύγεια αναφέρεται σε όλους εκείνους τους ανθρώπους και τις στιγμές που ξεχωρίζουν, φωτίζουν το περιβάλλον τους ή φέρνουν θετική ενέργεια και έμπνευση με έναν φυσικό, αβίαστο τρόπο.
+`,
+    introVideo: "",
+    logo: "/assets/events/2025.jpg",
+    sponsors: "/assets/events/Sponsors2025.jpg",
+    speakers: [
+      {
+        title: "From Photosynthesis to Bioluminescence",
+        name: "Spyros Gkelis",
+        url: "https://www.youtube.com/watch?v=5lOjJLE4GRA&list=PLdBayfDMYEO5PpafbTGOQc0a1PKHHw-3S&index=2"
+      },
+      {
+        title: "Rethinking AI and Well Being at Work",
+        name: "Angeliki Papasava",
+        url: "https://www.youtube.com/watch?v=b7w8JSRE5c8&list=PLdBayfDMYEO5PpafbTGOQc0a1PKHHw-3S&index=2"
+      },
+      {
+        title: "You Don't Need to be a Tech Builder to Run a Start Up",
+        name: "Dimitris Komninos",
+        url: "https://www.youtube.com/watch?v=GIjiCMy9Vio&list=PLdBayfDMYEO5PpafbTGOQc0a1PKHHw-3S&index=3"
+      },
+      {
+        title: "Why Truth Always Finds the Light",
+        name: "Thanasis Katerinopoulos",
+        url: "https://www.youtube.com/watch?v=qSIfcRCYvTA&list=PLdBayfDMYEO5PpafbTGOQc0a1PKHHw-3S&index=4"
+      },
+      {
+        title: "Can you Hear my Voice? Life with an Autistic Child",
+        name: "Giorgos Giotsas",
+        url: "https://www.youtube.com/watch?v=8peS39go__w&list=PLdBayfDMYEO5PpafbTGOQc0a1PKHHw-3S&index=5"
+      },
+      {
+        title: "I See a Firefly in You: The Hidden Light of Learning",
+        name: "Zabel Mouratian",
+        url: "https://www.youtube.com/watch?v=plht6eptDno&list=PLdBayfDMYEO5PpafbTGOQc0a1PKHHw-3S&index=6"
+      },
+      {
+        title: "Why Hard Work Beats Talent - Every Time",
+        name: "Panos (Beta) Vouros",
+        url: "https://www.youtube.com/watch?v=IUv5YNDdzwg&list=PLdBayfDMYEO5PpafbTGOQc0a1PKHHw-3S&index=7"
+      },
+      {
+        title: "The Earthquake That Can Rebuild Us",
+        name: "Marilia Antoniadou",
+        url: "https://www.youtube.com/watch?v=dcJHK53hd2A&list=PLdBayfDMYEO5PpafbTGOQc0a1PKHHw-3S&index=8"
+      },
+    ]
+  }
 ];

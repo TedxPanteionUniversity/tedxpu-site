@@ -1,0 +1,38 @@
+import { aboutSection } from "@/data/about";
+
+function AboutTitle({ id, label }: { id: string; label: string }) {
+  return (
+    <h2 id={id} className="cover-title" aria-label={label}>
+      <svg className="cover-title-svg" viewBox="0 0 1030 195" aria-hidden="true" focusable="false">
+        <text x="20" y="179" textLength="1000" lengthAdjust="spacingAndGlyphs">
+          {label}
+        </text>
+      </svg>
+    </h2>
+  );
+}
+
+export default function AboutSection() {
+  return (
+    <section id="about" className="about-cover" aria-labelledby="about-title">
+      <AboutTitle id="about-title" label={aboutSection.title} />
+
+      <div className="about-brand-row" aria-hidden="true">
+        <span className="about-brand about-brand-ted">{aboutSection.tedLabel}</span>
+        <span className="about-brand about-brand-connector">{aboutSection.connectorLabel}</span>
+        <span className="about-brand about-brand-tedx">{aboutSection.tedxLabel}</span>
+      </div>
+
+      <div className="about-copy-grid" aria-label="About TED and TEDx">
+        {aboutSection.copyBlocks.map((block) => (
+          <article key={block.id} className={`about-copy-block about-copy-${block.id}`}>
+            <h3 className="sr-only">{block.label}</h3>
+            {block.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
