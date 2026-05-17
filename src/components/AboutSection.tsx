@@ -2,9 +2,9 @@ import { aboutSection } from "@/data/about";
 
 function AboutTitle({ id, label }: { id: string; label: string }) {
   return (
-    <h2 id={id} className="cover-title" aria-label={label}>
-      <svg className="cover-title-svg" viewBox="0 0 1030 195" aria-hidden="true" focusable="false">
-        <text x="20" y="179" textLength="1000" lengthAdjust="spacingAndGlyphs">
+    <h2 id={id} className="about-title" aria-label={label}>
+      <svg className="about-title-svg" viewBox="0 0 1030 230" aria-hidden="true" focusable="false">
+        <text x="20" y="210" textLength="1000" lengthAdjust="spacingAndGlyphs">
           {label}
         </text>
       </svg>
@@ -15,12 +15,14 @@ function AboutTitle({ id, label }: { id: string; label: string }) {
 export default function AboutSection() {
   return (
     <section id="about" className="about-cover" aria-labelledby="about-title">
-      <AboutTitle id="about-title" label={aboutSection.title} />
+      <div className="about-heading-group">
+        <AboutTitle id="about-title" label={aboutSection.title} />
 
-      <div className="about-brand-row" aria-hidden="true">
-        <span className="about-brand about-brand-ted">{aboutSection.tedLabel}</span>
-        <span className="about-brand about-brand-connector">{aboutSection.connectorLabel}</span>
-        <span className="about-brand about-brand-tedx">{aboutSection.tedxLabel}</span>
+        <div className="about-brand-row" aria-hidden="true">
+          <span className="about-brand about-brand-ted">{aboutSection.tedLabel}</span>
+          <span className="about-brand about-brand-connector">{aboutSection.connectorLabel}</span>
+          <span className="about-brand about-brand-tedx">{aboutSection.tedxLabel}</span>
+        </div>
       </div>
 
       <div className="about-copy-grid" aria-label="About TED and TEDx">

@@ -629,15 +629,26 @@ a {
   background: #ffffff;
 }
 
+.about-heading-group {
+  position: relative;
+  z-index: 3;
+  container-type: inline-size;
+  display: grid;
+  gap: clamp(0.25rem, 0.9vw, 1.25rem);
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: clamp(0.25rem, 0.9vw, 1rem);
+}
+
 .about-title {
   position: relative;
   z-index: 1;
   left: 50%;
-  width: 112vw;
+  width: 105vw;
   margin: 0;
-  color: #000000;
+  color: black;
   line-height: 0;
-  transform: translateX(-50%);
+  transform: translateX(-53%);
 }
 
 .about-title-svg {
@@ -658,12 +669,17 @@ a {
   position: relative;
   z-index: 3;
   display: grid;
-  width: 100vw;
-  grid-template-columns: auto auto auto;
-  column-gap: clamp(1.25rem, 1.1vw, 1.7rem);
+  justify-self: start;
+  box-sizing: border-box;
+  width: min(100cqw, 118rem);
+  max-width: 118rem;
+  min-width: 0;
+  padding-inline: clamp(0.35rem, 2cqw, 2.5rem);
+  grid-template-columns: max-content max-content max-content;
+  column-gap: clamp(0.55rem, 1.1cqw, 1.7rem);
   justify-content: end;
-  align-items: start;
-  margin: clamp(-10rem, -13vw, -14rem) calc(50% - 50vw) 0;
+  align-items: end;
+  margin: 0;
 }
 
 .about-brand {
@@ -676,31 +692,24 @@ a {
 }
 
 .about-brand-ted {
-  padding-left: clamp(-0.75rem, 2vw, 2.5rem);
   color: #ff0800;
-  font-size: clamp(5rem, 13.5vw, 14.2rem);
+  font-size: clamp(5rem, 13.5cqw, 14.2rem);
   text-align: right;
-  transform: scaleY(1.1);
   transform-origin: top right;
-  transform: translateY(0.55em) translateX(0.2em);
 }
 
 .about-brand-tedx {
   color: #ff0800;
-  font-size: clamp(5rem, 13.5vw, 14.2rem);
+  font-size: clamp(5rem, 13.5cqw, 14.2rem);
   text-align: right;
-  transform: scaleY(1.1);
   transform-origin: top right;
-  transform: translateY(0.55em);
 }
 
 .about-brand-connector {
-  align-self: start;
   color: #000000;
-  font-size: clamp(9rem, 25vw, 31rem);
+  font-size: clamp(9rem, 25cqw, 31rem);
   line-height: 0.72;
-  margin-inline: clamp(-1.6rem, -1.4vw, -0.6rem);
-  transform: translateY(0.24em) translateX(0.1em);
+  margin-inline: clamp(-1.6rem, -1.4cqw, -0.6rem);
 }
 
 .about-copy-grid {
