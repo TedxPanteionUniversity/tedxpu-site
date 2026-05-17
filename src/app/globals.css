@@ -758,6 +758,59 @@ a {
 
 /* Responsive */
 
+@media (max-width: 1366px) {
+  .about-brand-ted,
+  .about-brand-tedx {
+    color: red;
+    transform: translateY(-6.5rem);
+  }
+
+  .about-brand-connector {
+    color: black;
+    font-size: clamp(15rem, 22cqw, 30rem);
+    line-height: -3.71;
+    margin-inline: clamp(-4rem, -6cqw, -8rem);
+    transform: translateY(-2rem) translateX(2rem);
+  }
+
+  .about-brand-row {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    justify-self: start;
+    box-sizing: border-box;
+    width: 100cqw;
+    max-width: none;
+    min-width: 0;
+    padding-right: 0;
+    grid-template-columns: max-content max-content max-content;
+    column-gap: clamp(1rem, 2cqw, 3rem);
+    justify-content: end;
+    align-items: end;
+    margin: 0;
+
+  }
+
+  .about-copy-block {
+    margin-top: -7rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .sensorium-stage {
+    width: min(calc(75.5vw - 3.775rem), 980px);
+  }
+
+  .year-stack {
+    width: min(100% - 1.5rem, 72rem);
+    gap: clamp(0.3rem, 0.6vw, 0.55rem) clamp(0.65rem, 1.25vw, 1.4rem);
+  }
+
+  .year-stack .year-item {
+    font-size: clamp(4.8rem, 6.2vw, 7.1rem);
+  }
+}
+
 @media (max-width: 1100px) {
   :root {
     --teams-content-gap: clamp(5rem, 11vw, 8rem);
@@ -799,49 +852,6 @@ a {
     font-size: clamp(1.1rem, 2.4vw, 1.65rem);
   }
 
-  .team-group {
-    grid-template-columns: 1fr;
-    gap: clamp(1.5rem, 4vw, 2.5rem);
-    min-height: auto;
-  }
-
-  .team-card-collage,
-  .team-group:nth-child(even) .team-card-collage {
-    justify-content: center;
-    min-height: auto;
-    padding-left: 0;
-  }
-
-  .team-photo-card {
-    position: relative;
-    width: min(100%, clamp(30rem, 58vw, 62rem));
-    height: clamp(20rem, 32vw, 34rem);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    background: transparent;
-    transform: none;
-  }
-
-  .team-group-curation .team-photo-card,
-  .team-group-graphs .team-photo-card,
-  .team-group-mark .team-photo-card,
-  .team-group-exp .team-photo-card,
-  .team-group-speakers .team-photo-card,
-  .team-group-spons .team-photo-card {
-    width: min(100%, clamp(30rem, 72vw, 62rem));
-    transform: none;
-  }
-
-  .team-copy-stack {
-    justify-self: center;
-    max-width: min(100%, 30rem);
-  }
-
-  .team-copy {
-    text-align: center;
-  }
 }
 
 @media (max-width: 720px) {
@@ -855,6 +865,39 @@ a {
     --teams-title-margin-left: -17.5vw;
     --teams-title-top: 5.5rem;
     --teams-title-width: 135vw;
+  }
+
+  .sensorium-stage {
+    width: min(calc(65vw - 1rem), 28rem);
+  }
+
+  .hero-doodle:nth-child(1) {
+    transform: translateX(132%);
+  }
+
+  .hero-doodle:nth-child(2) {
+    transform: translateY(42%);
+  }
+
+  .hero-doodle:nth-child(4) {
+    transform: translateX(-132%);
+  }
+
+  .hero-static-doodle:nth-child(1) {
+    transform: translateX(86%);
+  }
+
+  .hero-static-doodle:nth-child(2) {
+    transform: translateY(106%);
+  }
+
+  .hero-static-doodle:nth-child(5) {
+    transform: translateX(-128%);
+  }
+
+  .hero-timer {
+    top: 82%;
+    left: 42%;
   }
 
   .site-sections {
