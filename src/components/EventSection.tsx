@@ -24,8 +24,22 @@ function getDescriptionParagraphs(description: string) {
     .filter(Boolean);
 }
 
+const eventImageSizes: Record<string, { width: number; height: number }> = {
+  "/assets/events/2016.jpg": { width: 620, height: 300 },
+  "/assets/events/2017.jpg": { width: 1024, height: 533 },
+  "/assets/events/2018.jpg": { width: 1024, height: 427 },
+  "/assets/events/2019.jpg": { width: 1280, height: 532 },
+  "/assets/events/2021.jpg": { width: 1382, height: 1362 },
+  "/assets/events/2022.jpg": { width: 1240, height: 1240 },
+  "/assets/events/2023.jpg": { width: 670, height: 670 },
+  "/assets/events/2024.jpg": { width: 260, height: 132 },
+  "/assets/events/2025.jpg": { width: 2500, height: 1309 },
+  "/assets/events/Sponsors2025.jpg": { width: 1920, height: 1080 },
+};
+
 function EventMediaImage({ src, alt }: { src: string; alt: string }) {
   const [hidden, setHidden] = useState(false);
+  const imageSize = eventImageSizes[src] ?? { width: 900, height: 520 };
 
   if (hidden) {
     return null;
@@ -35,9 +49,9 @@ function EventMediaImage({ src, alt }: { src: string; alt: string }) {
     <Image
       src={src}
       alt={alt}
-      width={900}
-      height={520}
-      sizes="(max-width: 720px) 92vw, 36rem"
+      width={imageSize.width}
+      height={imageSize.height}
+      sizes="(max-width: 720px) calc(100vw - 2rem), 36rem"
       className="event-detail-image"
       onError={() => setHidden(true)}
     />
@@ -103,7 +117,7 @@ export default function EventSection() {
 
   return (
     <section id="events" className="cover-section events-cover" aria-labelledby="events-title">
-      <CoverTitle id="events-title" label="EVENTS" />
+      <CoverTitle id="events-title" label="EVENTS" className="events-title" />
 
       <div className="section-inner year-stack" aria-label="Event years">
         {eventYears.map((year) =>

@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Replace /logo.png with your actual logo in /public/images */}
           <div className="-ml-2 flex flex-col space-y-1">
           <Image
-            src="/assets/tedxpu-logo.png"
+            src="/assets/tedxpu-logo-white.png"
             alt="TEDx Logo"
             width={200}
             height={50}
