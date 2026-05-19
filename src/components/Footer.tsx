@@ -13,8 +13,9 @@ export default function Footer() {
           <Image
             src="/assets/tedxpu-logo-white.png"
             alt="TEDx Logo"
-            width={200}
-            height={50}
+            width={1364}
+            height={492}
+            className="h-auto w-[200px]"
           />
 
         <p className="px-2 text-gray-300">
