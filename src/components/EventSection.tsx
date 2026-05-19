@@ -5,6 +5,8 @@ import type { HistoryEvent } from "@/data/eventData";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
+const anniversaryLink = "https://tedxpanteionuniversity.com/";
+
 function CoverTitle({ id, label, className = "" }: { id: string; label: string; className?: string }) {
   return (
     <h2 id={id} className={`cover-title ${className}`} aria-label={label}>
@@ -25,16 +27,17 @@ function getDescriptionParagraphs(description: string) {
 }
 
 const eventImageSizes: Record<string, { width: number; height: number }> = {
-  "/assets/events/2016.jpg": { width: 620, height: 300 },
-  "/assets/events/2017.jpg": { width: 1024, height: 533 },
-  "/assets/events/2018.jpg": { width: 1024, height: 427 },
-  "/assets/events/2019.jpg": { width: 1280, height: 532 },
-  "/assets/events/2021.jpg": { width: 1382, height: 1362 },
-  "/assets/events/2022.jpg": { width: 1240, height: 1240 },
-  "/assets/events/2023.jpg": { width: 670, height: 670 },
-  "/assets/events/2024.jpg": { width: 260, height: 132 },
-  "/assets/events/2025.jpg": { width: 2500, height: 1309 },
-  "/assets/events/Sponsors2025.jpg": { width: 1920, height: 1080 },
+  "/assets/events/2016.avif": { width: 620, height: 300 },
+  "/assets/events/2017.avif": { width: 1024, height: 533 },
+  "/assets/events/2018.avif": { width: 1024, height: 427 },
+  "/assets/events/2019.avif": { width: 1280, height: 532 },
+  "/assets/events/2021.avif": { width: 1382, height: 1362 },
+  "/assets/events/2022.avif": { width: 1240, height: 1240 },
+  "/assets/events/2023.avif": { width: 670, height: 670 },
+  "/assets/events/2024.avif": { width: 260, height: 132 },
+  "/assets/events/2025.avif": { width: 2500, height: 1309 },
+  "/assets/events/Sponsors2025.avif": { width: 1920, height: 1080 },
+  "/assets/events/2026.avif": { width: 2500, height: 1309 },
 };
 
 function EventMediaImage({ src, alt }: { src: string; alt: string }) {
@@ -121,6 +124,17 @@ export default function EventSection() {
 
       <div className="section-inner year-stack" aria-label="Event years">
         {eventYears.map((year) =>
+          year === "X.ANNIVERSARY" ? (
+            <a
+              key={year}
+              className="year-item year-item-interactive year-item-anniversary"
+              href={anniversaryLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {year}
+            </a>
+          ) : 
           eventsByYear.has(year) ? (
             <button
               key={year}
