@@ -41,7 +41,17 @@ const eventImageSizes: Record<string, { width: number; height: number }> = {
   "/assets/events/Sponsors2026.avif": { width: 1920, height: 1080 },
 };
 
-function EventMediaImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+function EventMediaImage({
+  src,
+  alt,
+  className = "",
+  unoptimized = false,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  unoptimized?: boolean;
+}) {
   const [hidden, setHidden] = useState(false);
   const imageSize = eventImageSizes[src] ?? { width: 900, height: 520 };
 
@@ -58,6 +68,7 @@ function EventMediaImage({ src, alt, className = "" }: { src: string; alt: strin
       sizes="(max-width: 720px) calc(100vw - 2rem), 36rem"
       className={`event-detail-image ${className}`.trim()}
       onError={() => setHidden(true)}
+      unoptimized={unoptimized}
     />
   );
 }
@@ -111,6 +122,7 @@ function EventDetailPanel({ event, onClose }: { event: HistoryEvent; onClose: ()
                 src={sponsorSpotlightSrc}
                 alt={`${event.year} sponsors`}
                 className="event-sponsor-spotlight-image"
+                unoptimized
               />
             </a>
           </aside>
