@@ -103,11 +103,6 @@ function EventDetailPanel({ event, onClose }: { event: HistoryEvent; onClose: ()
                 Watch intro video
               </a>
             ) : null}
-            {event.sponsors ? (
-              <a href={event.sponsors} target="_blank" rel="noreferrer">
-                View sponsors
-              </a>
-            ) : null}
           </div>
 
           {event.sponsors && !sponsorSpotlightSrc ? (
@@ -117,14 +112,12 @@ function EventDetailPanel({ event, onClose }: { event: HistoryEvent; onClose: ()
 
         {sponsorSpotlightSrc ? (
           <aside className="event-sponsor-spotlight" aria-label={`${event.year} sponsors`}>
-            <a href={sponsorSpotlightSrc} target="_blank" rel="noreferrer">
-              <EventMediaImage
-                src={sponsorSpotlightSrc}
-                alt={`${event.year} sponsors`}
-                className="event-sponsor-spotlight-image"
-                unoptimized
-              />
-            </a>
+            <EventMediaImage
+              src={sponsorSpotlightSrc}
+              alt={`${event.year} sponsors`}
+              className="event-sponsor-spotlight-image"
+              unoptimized
+            />
           </aside>
         ) : (
           <div className="event-speaker-list" aria-label={`${event.year} speakers`}>

@@ -88,9 +88,6 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
-        <link rel="preload" href="/assets/events/Sponsors2026.avif" as="image" type="image/avif" />
-      </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <ScrollToTop />
         {children}

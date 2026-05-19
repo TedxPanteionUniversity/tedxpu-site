@@ -14,7 +14,7 @@ export default function Header() {
     const updateActiveSection = () => {
       const marker = window.innerHeight * 0.38;
       const activeId =
-        sectionIds.find((sectionId) => {
+        sectionIds.filter((sectionId) => {
           const section = document.getElementById(sectionId);
 
           if (!section) {
@@ -23,7 +23,7 @@ export default function Header() {
 
           const rect = section.getBoundingClientRect();
           return rect.top <= marker && rect.bottom > marker;
-        }) ?? null;
+        }).at(-1) ?? null;
 
       setActiveHref((currentHref) => {
         const nextHref = activeId ? `#${activeId}` : null;
@@ -71,6 +71,7 @@ export default function Header() {
               className={activeHref === item.href ? "nav-link nav-link-active" : "nav-link"}
               href={item.href}
               aria-current={activeHref === item.href ? "true" : undefined}
+              onClick={() => setActiveHref(item.href)}
             >
               {item.label}
             </a>
