@@ -84,6 +84,9 @@ export default function Hero() {
   const [timerLabel, setTimerLabel] = useState(getTimerLabel);
 
   useEffect(() => {
+    // Ensure the timer label is correct immediately on mount
+    setTimerLabel(getTimerLabel());
+
     const interval = window.setInterval(() => {
       setTimerLabel(getTimerLabel());
     }, 1000);
